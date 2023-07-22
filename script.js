@@ -14,7 +14,7 @@ You do not need to call the function. */
 const calc_BMI_Btn = document.getElementById("BMI-calc-btn");
 let weight = document.getElementById("weight");
 let height = document.getElementById("height");
-let result = document.getElementById("result");
+let result = document.getElementById("result-sentence");
 
 function bmiCalculator() {
   weight = Number(document.getElementById("weight").value);
@@ -22,7 +22,8 @@ function bmiCalculator() {
   if (weight && height) {
     const bmi = Math.round(weight / height ** 2);
     if (bmi <= 18.5) {
-      result.textContent = `You have a BMI of ${bmi}. You are Underweight.`;
+      result.textContent = `You have a BMI of ${bmi}. You are Underweight`;
+      console.log(resultValue);
     } else if (bmi <= 24.9) {
       result.textContent = `You have a BMI of ${bmi}. You are Healthy.`;
     } else if (bmi <= 29.9) {
@@ -30,6 +31,8 @@ function bmiCalculator() {
     } else {
       result.textContent = `You have a BMI of ${bmi}. You are Obese.`;
     }
+  } else {
+    alert("Invalid Inputs");
   }
 }
 calc_BMI_Btn.addEventListener("click", bmiCalculator);
