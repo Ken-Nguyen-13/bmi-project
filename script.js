@@ -15,21 +15,25 @@ const calc_BMI_Btn = document.getElementById("BMI-calc-btn");
 let weight = document.getElementById("weight");
 let height = document.getElementById("height");
 let result = document.getElementById("result-sentence");
+let resultKeyword = document.getElementById("result-keyword");
 
 function bmiCalculator() {
   weight = Number(document.getElementById("weight").value);
   height = Number(document.getElementById("height").value);
   if (weight && height) {
-    const bmi = Math.round(weight / height ** 2);
-    if (bmi <= 18.5) {
-      result.textContent = `You have a BMI of ${bmi}. You are Underweight`;
-      console.log(resultValue);
+    const bmi = (weight / height ** 2).toFixed(1);
+    if (bmi < 18.5) {
+      resultKeyword.textContent = `Underweight`;
+      result.textContent = `You have a BMI of ${bmi}. You are:`;
     } else if (bmi <= 24.9) {
-      result.textContent = `You have a BMI of ${bmi}. You are Healthy.`;
+      resultKeyword.textContent = `Healthy`;
+      result.textContent = `You have a BMI of ${bmi}. You are:`;
     } else if (bmi <= 29.9) {
-      result.textContent = `You have a BMI of ${bmi}. You are Overweight.`;
+      resultKeyword.textContent = `Overweight`;
+      result.textContent = `You have a BMI of ${bmi}. You are:`;
     } else {
-      result.textContent = `You have a BMI of ${bmi}. You are Obese.`;
+      resultKeyword.textContent = `Obese`;
+      result.textContent = `You have a BMI of ${bmi}. You are:`;
     }
   } else {
     alert("Invalid Inputs");

@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap"
+      rel="stylesheet"
+    />
     <link href="style.css" rel="stylesheet" />
     <title>BMI Calculator</title>
   </head>
   <body>
     <h1 id="project-title">BMI Calculator</h1>
     <main>
-      <input type="number" id="weight" value="Enter Weight Here (kg)" />
-      <input type="number" id="height" value="Enter Height Here (m)" />
+      <input type="number" id="weight" placeholder="Enter Weight Here (kg)"/><!--When set to value, error cannot be parsed-->
+      <input type="number" id="height" placeholder="Enter Height Here (m)"/><!--Same here-->
       <button id="BMI-calc-btn">Calculate BMI</button>
-      <div id="result">
+      <div id="result-sentence-container">
         <p id="result-sentence"></p>
+        <span id="result-keyword"></span>
       </div>
+
       <div id="key">
-        <p id="underweight">Underweight = 18.5 or less BMI</p>
+        <p id="underweight">Underweight = less than 18.5 BMI</p>
         <p id="healthy">Healthy = 18.5 - 24.9 BMI</p>
         <p id="overweight">Overweight = 25 - 29.9 BMI</p>
         <p id="obese">Obese = 30 or greater BMI</p>
